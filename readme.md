@@ -4,7 +4,7 @@ Miten tehdä asioita. Ohjeet asioiden tekemiseen ja ihmisten avustamista.
 
 ## Hyödyllisiä linkkejä
 
-[Dokumentaatio](Dokumentointi.pdf)
+[Dokumentaatio](doc/dokumentaatio.pdf)
 
 Sivut
  -  [Index](http://miten.herokuapp.com)
