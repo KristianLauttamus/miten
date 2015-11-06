@@ -4,7 +4,7 @@ Miten tehdä asioita. Ohjeet asioiden tekemiseen ja ihmisten avustamista.
 
 ## Hyödyllisiä linkkejä
 
-[Dokumentaatio](doc/dokumentaatio.pdf)
+[Dokumentaatio](doc/dokumentaatio.pdf)  
 [Järjestelmän sisältö](doc/Järjestelmän tietosisältö.pdf)
 
 Sivut
