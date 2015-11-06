@@ -12,3 +12,7 @@ Sivut
  -  [Listaus](http://miten.herokuapp.com/list)
  -  [Näyttö](http://miten.herokuapp.com/show)
  -  [Muokkaus](http://miten.herokuapp.com/edit)
+
+SQL
+ -  [Create Tables](database/sql/create_tables.sql)
+ -  [Drop Tables](database/sql/drop_tables.sql)
