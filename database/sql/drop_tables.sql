@@ -1,12 +1,8 @@
-SET FOREIGN_KEY_CHECKS = 0;
-
-DROP TABLE users;
-DROP TABLE guides;
-DROP TABLE comments;
-DROP TABLE contributions;
-DROP TABLE steps;
-DROP TABLE step_contributions;
-DROP TABLE tips;
-DROP TABLE source_citations;
-
-SET FOREIGN_KEY_CHECKS = 1;
+DROP TABLE users CASCADE;
+DROP TABLE guides CASCADE;
+DROP TABLE comments CASCADE;
+DROP TABLE contributions CASCADE;
+DROP TABLE steps CASCADE;
+DROP TABLE step_contributions CASCADE;
+DROP TABLE tips CASCADE;
+DROP TABLE source_citations CASCADE;

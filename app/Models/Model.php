@@ -2,12 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
+
 class Model {
     private function getTable(){
-        return isset($this->table) ? $this->table : str_plural(strtolower(get_class($this)));
+        if (isset($this->table)) {
+            return $this->table;
+        }
+
+        return str_replace('\\', '', Str::snake(Str::plural(class_basename($this))));
     }
 
-    public function all(){
-        return DB::select('select * from ' . $this->getTable());
+    public static function all(){
+        $instance = new static;
+
+        return DB::select('select * from ' . $instance->getTable());
     }
 }

@@ -12,7 +12,7 @@
  */
 
 $app->get('/', function () use ($app) {
-    return view('index');
+    return App\Models\User::all();
 });
 $app->get('/list', function () use ($app) {
     return view('list');

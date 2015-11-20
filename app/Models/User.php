@@ -2,9 +2,7 @@
 
 use App\Models\Model;
 
-class User extends Model;
+class User extends Model
 {
     protected $table = "users";
-
-    protected $fillable = ['email'];
 }
