@@ -18,4 +18,8 @@ class Model {
 
         return DB::select('select * from ' . $instance->getTable());
     }
+
+    public static function where($column, $operator, $value){
+        return DB::select('select * from ' . $instance->getTable() . ' where ' . $column . ' ' . $operator .  ' ' . $value);
+    }
 }

@@ -14,6 +14,14 @@
 $app->get('/', function () use ($app) {
     return App\Models\User::all();
 });
+
+// User
+$app->get('login', 'AuthController@getLogin');
+$app->post('login', 'AuthController@postLogin');
+$app->get('register', 'AuthController@getRegister');
+$app->post('register', 'AuthController@postRegister');
+
+// Guides
 $app->get('/list', function () use ($app) {
     return view('list');
 });
