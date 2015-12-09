@@ -11,9 +11,9 @@
 |
  */
 
-$app->get('/', function () use ($app) {
-    return App\Models\User::all();
-});
+$app->get('/', 'GuideController@getIndex');
+$app->get('{id}', 'GuideController@getShow');
+$app->get('/create', 'GuideController@getCreate');
 
 // User
 $app->get('login', 'AuthController@getLogin');

@@ -34,8 +34,36 @@ use Illuminate\Database\Eloquent\MassAssignmentException;
 use Illuminate\Database\Eloquent\Model;
 
 class Model Extends Model {
-    public function __construct(array $attributes = []){
+    // PrimaryKey
+    protected $primaryKey = 'id';
+
+    // Dates
+    protected $dates = ['created_at', 'updated_at'];
+
+    // Fillable attributes
+    protected $fillable;
+
+    // Attributes
+    protected $attributes;
+
+    public function __construct(array $attributes = null) {
+        $this->checkExists();
         $this->fill($attributes);
+    }
+
+    public function __get($key){
+        return $this->attributes[$key];
+    }
+
+    public function __set($key, $value){
+        return $this->attributes[$key] = $value;
+    }
+
+    private function checkExists()
+    {
+        if(isset($this->attributes[$this->primaryKey])){
+            $this = $this->find($this->attributes[$this->primaryKey]);
+        }
     }
 
     /**
@@ -48,6 +76,10 @@ class Model Extends Model {
         }
 
         return str_replace('\\', '', Str::snake(Str::plural(class_basename($this))));
+    }
+
+    public static function find($pKey){
+        return DB::select('select * from ' . static::getTable() . ' where ' . $this->primaryKey . ' = ' . $pkey);
     }
 
     public static function all(){
@@ -85,21 +117,38 @@ class Model Extends Model {
      */
     public function fill(array $attributes)
     {
-        $totallyGuarded = $this->totallyGuarded();
+        $attributes = $this->checkAttributes($attributes);
 
-        foreach ($this->fillableFromArray($attributes) as $key => $value) {
-            $key = $this->removeTableFromKey($key);
-
-            // The developers may choose to place some attributes in the "fillable"
-            // array, which means only those attributes may be set through mass
-            // assignment to the model, and all others will just be ignored.
-            if ($this->isFillable($key)) {
-                $this->setAttribute($key, $value);
-            } elseif ($totallyGuarded) {
-                throw new MassAssignmentException($key);
+        // Käydään assosiaatiolistan avaimet läpi
+        foreach ($attributes as $attribute => $value) {
+            // Jos avaimen niminen attribuutti on olemassa...
+            if (property_exists($this, $attribute)) {
+                // ... lisätään avaimen nimiseen attribuuttin siihen liittyvä arvo
+                $this->{$attribute} = $value;
             }
         }
 
         return $this;
+    }
+
+    /**
+     * Save the model
+     */
+    public function save(array $newAttributes = null)
+    {
+        $query = 'INSERT INTO ' . static::getTable();
+    }
+
+    /**
+     *
+     */
+    public function checkAttributes(array $attributes)
+    {
+        $returnable = [];
+        foreach($this->fillable as $fillable){
+            isset($attributes[$fillable]) ? $returnable[$fillable] = $attributes[$fillable] : '';
+        }
+
+        return $returnable;
     }
 }
