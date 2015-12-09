@@ -12,12 +12,16 @@ class User extends Model
      * Get the current User that's logged in
      */
     public static function getUserLoggedIn(){
-    	$user = User::where('remember_token', session()->get('remember_token'))->get();
+    	return User::where('remember_token', session()->get('remember_token'))->get();
+    }
 
-    	if($user == null){
-    		return null;
-    	} else {
-    		return $user;
-    	}
+    /**
+     * Try authenticating the user with given credentials
+     * @param String $email User's email
+     * @param String $password User's unencrypted password
+     * @param boolean $remember Create Cookie?
+     */
+    public static function authenticate($email, $password, $remember = false){
+        $user 
     }
 }

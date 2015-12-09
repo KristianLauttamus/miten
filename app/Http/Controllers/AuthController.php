@@ -17,7 +17,13 @@ class AuthController extends Controller
      * Handles login request
      */
     public function postLogin(Request $request){
-        return $request->all();
+        if(User::authenticate($request->input('email'), $request->input('password'), $request->get('remember_me'))){
+            flash('Kirjautuminen onnistui');
+
+            return redirect()->route('home');
+        } else {
+            return redirect()->route('login')->with();
+        }
     }
 
     public function getRegister(){
