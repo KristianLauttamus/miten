@@ -12,8 +12,8 @@
  */
 
 $app->get('/', 'GuideController@getIndex');
-$app->get('{id}', 'GuideController@getShow');
-$app->get('/create', 'GuideController@getCreate');
+$app->get('guides/create', 'GuideController@getCreate');
+$app->post('guides/create', 'GuideController@postCreate');
 
 // User
 $app->get('login', 'AuthController@getLogin');

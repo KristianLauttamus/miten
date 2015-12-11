@@ -1,0 +1,37 @@
+{
+  "name": "miten",
+  "version": "0.0.0",
+  "description": "Miten tehdä asioita. Ohjeet asioiden tekemiseen ja ihmisten avustamista.",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "dependencies": {
+    "babel-plugin-transform-runtime": "~6.3.13",
+    "babel-preset-es2015": "~6.3.13",
+    "babel-runtime": "~5.8.34",
+    "gulp": "~3.9.0",
+    "laravel-elixir": "~3.4.2",
+    "laravel-elixir-browserify": "~0.8.1",
+    "laravel-elixir-browsersync": "~0.1.5",
+    "vue": "~1.0.10",
+    "vue-hot-reload-api": "~1.2.2",
+    "vueify": "~7.0.2",
+    "vueify-insert-css": "~1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KristianLauttamus/miten.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/KristianLauttamus/miten/issues"
+  },
+  "private": true
+}

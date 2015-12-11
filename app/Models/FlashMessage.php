@@ -2,14 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
+
 class FlashMessage
 {
-    public function create($title = null, $message = null, $type = "success", $overlay = false, $timer = 1700)
+    protected $request;
+
+    public function create(Request $request, $title = null, $message = null, $type = "success", $overlay = false, $timer = 1700)
     {
-        if (func_num_args() == 0) {
+        if (func_num_args() == 1) {
+            $this->request = $request;
             return $this;
+        } else if (func_num_args() == 0) {
+            return dd("error");
         }
-        return session()->flash('flash_message', [
+        return $request->session()->flash('flash_message', [
             'title' => $title,
             'message' => $message,
             'type' => $type,
@@ -19,6 +26,6 @@ class FlashMessage
     }
     public function error($title = null, $message = null)
     {
-        return $this->create($title, $message, "error");
+        return $this->create($this->request, $title, $message, "error");
     }
 }

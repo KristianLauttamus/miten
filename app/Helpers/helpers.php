@@ -1,6 +1,9 @@
 <?php
-function flash($title = null, $message = null)
+function flash(\Illuminate\Http\Request $request, $title = null, $message = null)
 {
     $flash = app('App\Models\FlashMessage');
-    return $flash->create($title, $message);
+    if ($title == null && $message == null) {
+        return $flash->create($request);
+    }
+    return $flash->create($request, $title, $message);
 }

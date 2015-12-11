@@ -16,3 +16,17 @@
 	p.miten__description {
 	}
 }
+
+.step_add_bar {
+	display: inline-block;
+	
+	&:before {
+		content: '\f067';
+		display: inline-block;
+	    font: normal normal normal 14px/1 FontAwesome;
+	    font-size: inherit;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	}
+}

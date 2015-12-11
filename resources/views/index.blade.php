@@ -9,4 +9,9 @@
 			Miten solmin solmion?
 		</p>
 	</div>
+	<ul>
+		@foreach($guides as $guide)
+		<li><pre>{!! $guide !!}</pre></li>
+		@endforeach
+	</ul>
 @stop

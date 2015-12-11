@@ -49,9 +49,11 @@ CREATE TABLE contributions(
 
 CREATE TABLE steps(
   id SERIAL PRIMARY KEY,
+  step int NOT NULL,
   title varchar(100) NOT NULL UNIQUE,
   content varchar(255) NOT NULL,
   image varchar(255),
+  video varchar(255),
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP,
 
@@ -64,9 +66,11 @@ CREATE TABLE steps(
 
 CREATE TABLE step_contributions(
   id SERIAL PRIMARY KEY,
+  step int NOT NULL,
   title varchar(100) NOT NULL UNIQUE,
   content varchar(255) NOT NULL,
   image varchar(255),
+  video varchar(255),
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP,
 

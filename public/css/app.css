@@ -3,11 +3,26 @@
   text-align: center;
   margin: auto auto;
   width: 500px;
-  margin-top: 55px; }
-  .miten__card h1.miten__title {
-    padding: 0px;
-    margin: 0px;
-    font-size: 55px;
-    font-family: 'Kaushan Script', cursive; }
+  margin-top: 55px;
+}
 
-/*# sourceMappingURL=app.css.map */
+.miten__card h1.miten__title {
+  padding: 0px;
+  margin: 0px;
+  font-size: 55px;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.step_add_bar {
+  display: inline-block;
+}
+
+.step_add_bar:before {
+  content: '\f067';
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,5 +1,8 @@
 var elixir = require('laravel-elixir');
 
+// Vueify
+//var vueify = require('laravel-elixir-browserify').init("vueify");
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,4 +16,9 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss');
+
+    mix.browserSync({proxy: 'miten.dev'});
+
+    // Vueify
+    //mix.vueify('addGuide.js', {insertGlobals: true, transform: "vueify", output: "public/js"});
 });
