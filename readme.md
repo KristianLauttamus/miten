@@ -9,9 +9,11 @@ Miten tehdä asioita. Ohjeet asioiden tekemiseen ja ihmisten avustamista.
 
 Sivut
  -  [Index](http://miten.herokuapp.com)
- -  [Listaus](http://miten.herokuapp.com/list)
+ -  [Listaus](http://miten.herokuapp.com/)
  -  [Näyttö](http://miten.herokuapp.com/show)
  -  [Muokkaus](http://miten.herokuapp.com/edit)
+ -  [Rekisteröinti](http://miten.herokuapp.com/register)
+ -  [Login](http://miten.herokuapp.com/login)
 
 SQL
  -  [Create Tables](database/sql/create_tables.sql)
